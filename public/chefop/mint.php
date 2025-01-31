@@ -41,12 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Formulaire de mint côté serveur (PHP) -->
     <form method="POST">
-        <button type="submit" name="server_mint">Mint 1 TCO (via PHP)</button>
+        <button type="submit" name="server_mint">Mint 1 Token mission complétée  (via PHP)</button>
     </form>
 
     <hr>
     <!-- Bouton pour déclencher la fonction JavaScript (signature via MetaMask) -->
-    <button type="button" onclick="mintWithMetaMask()">Mint 1 TCO (via MetaMask)</button>
+    <button type="button" onclick="mintWithMetaMask()">Mint 1 Token mission complétée (via MetaMask)</button>
 
     <p><a href="index.php">Retour à la Gestion de MyTokenchefop</a></p>
 

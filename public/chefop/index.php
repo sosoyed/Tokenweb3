@@ -53,7 +53,7 @@ try {
     $erreur = $e->getMessage();
 }
 // Initialiser les variables comme tableaux vides
-$adressesAutoriseesCO = [];
+/*$adressesAutoriseesCO = [];
 
 try {
     // Appeler la fonction du contrat pour récupérer les adresses autorisées
@@ -62,7 +62,7 @@ try {
     $erreur = $e->getMessage();
     print_r($erreur);
     // Vous pouvez également enregistrer cette erreur dans un log ou l'afficher
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -72,18 +72,15 @@ try {
     <title>Gestion de MyTokenchefop</title>
 </head>
 <body>
-    <h1>MyTokenchefop</h1>
-    <?php if (isset($erreur)): ?>
-        <p style="color:red;">Erreur : <?= htmlspecialchars($erreur) ?></p>
-    <?php else: ?>
+    <h1>Bienvenue chef op</h1>
 
         <p><strong>Propriétaire :</strong> <?= htmlspecialchars($owner) ?></p>
         <p><strong>Adresse de TokenCommander :</strong> <?= htmlspecialchars($tokenCommanderAddress) ?></p>
         <h2>Adresses Autorisées</h2>
-        <?php if (!empty($adressesAutorisees)): ?>
+        <?php if (!empty($adressesAutoriseesCO)): ?>
             <ul>
                 <?php foreach ($adressesAutoriseesCO as $adresse): ?>
-                    <li><?= htmlspecialchars($adresse) ?></li>
+                    <li><?= htmlspecialchars($adresse); ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php else: ?>
@@ -92,12 +89,11 @@ try {
 
         <ul>
             <li><a href="add_address.php">Ajouter une Adresse Autorisée</a></li>
-            <li><a href="mint.php">Mint des Tokens</a></li>
+            <li><a href="mint.php">Mint des Tokens missions complétées</a></li>
+            <li><a href="mint_perso.php">Mint des Tokens création personnel</a></li>            
             <li><a href="set_token_commander.php">Définir l'Adresse de TokenCommander</a></li>
             <li><a href="burn.php">Brûler des Tokens</a></li>
         </ul>
-    <?php endif; ?>
-
     <p><a href="../index.php">Retour à l'accueil</a></p>
 </body>
 </html>

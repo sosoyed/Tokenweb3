@@ -13,6 +13,7 @@
         <li><a href="commander/index.php">Gestion de MyTokencommander</a></li>
         <li><a href="chefop/index.php">Gestion de MyTokenchefop</a></li>
         <li><a href="pc/index.php">Gestion de MyTokenPC</a></li>
+        <li><a href="logistique/index.php">Gestion Logistique</a></li>
     </ul>
 </body>
 </html>

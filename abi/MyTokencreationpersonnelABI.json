@@ -7,7 +7,7 @@
 				"type": "address"
 			}
 		],
-		"name": "addAdressPC",
+		"name": "addAdressChefop",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -50,6 +50,13 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "burnCO",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -63,13 +70,6 @@
 			}
 		],
 		"name": "burnFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "burnmissioncompleteePC",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -192,20 +192,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "mintTokenmissioncompleteePC",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_tokenCommanderAddress",
-				"type": "address"
-			}
-		],
-		"name": "settokenCommanderAddress",
+		"name": "mintTokencreationpersonnel",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -296,7 +283,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "adressesAutoriseesPC",
+		"name": "adressesAutoriseesCO",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -365,7 +352,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "getAdressesAutoriseesPC",
+		"name": "getAdressesAutoriseesCO",
 		"outputs": [
 			{
 				"internalType": "address[]",
@@ -410,19 +397,6 @@
 				"internalType": "string",
 				"name": "",
 				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "tokenCommander",
-		"outputs": [
-			{
-				"internalType": "contract ERC20Burnable",
-				"name": "",
-				"type": "address"
 			}
 		],
 		"stateMutability": "view",

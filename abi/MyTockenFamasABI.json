@@ -7,7 +7,7 @@
 				"type": "address"
 			}
 		],
-		"name": "addAdressPC",
+		"name": "addAdresslogistique",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -50,6 +50,13 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "burnFamas",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -63,13 +70,6 @@
 			}
 		],
 		"name": "burnFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "burnmissioncompleteePC",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -191,8 +191,14 @@
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "mintTokenmissioncompleteePC",
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "mintFamas",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -205,7 +211,7 @@
 				"type": "address"
 			}
 		],
-		"name": "settokenCommanderAddress",
+		"name": "setTokenCommanderAddress",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -296,7 +302,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "adressesAutoriseesPC",
+		"name": "adressesAutoriseesL",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -365,7 +371,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "getAdressesAutoriseesPC",
+		"name": "getAdressesAutoriseesL",
 		"outputs": [
 			{
 				"internalType": "address[]",

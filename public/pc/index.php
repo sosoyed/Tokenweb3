@@ -34,11 +34,11 @@ try {
     // En général, web3p renvoie la valeur de retour dans un tableau
     // Donc $owner = $ownerResult[0] ou directement $ownerResult si c’est un string
     $owner = is_array($ownerResult) && isset($ownerResult[0]) ? $ownerResult[0] : $ownerResult;
-    $tokenCOAddressResult = $client->callFunction('tokenCO');
+    $tokenCOAddressResult = $client->callFunction('tokenCommander');
     $tokenCOAddress = is_array($tokenCOAddressResult) && isset($tokenCOAddressResult[0]) ? $tokenCOAddressResult[0] : $tokenCOAddressResult;
 
     // 2) Récupérer la liste complète des adresses autorisées via 'getAdressesAutorisees()'
-    $adressesRaw = $client->callFunction('getAdressesAutorisees');
+    $adressesRaw = $client->callFunction('getAdressesAutoriseesPC');
 
     // Selon la version de web3p, le retour peut être un tableau,
     // par exemple [ ["0x123...", "0xabc..."] ] ou similaire.
@@ -46,22 +46,12 @@ try {
     // Faites un var_dump($adressesRaw) pour vérifier.
 
     // Suppose qu’il faille faire :
-    $adressesAutorisees = isset($adressesRaw[0]) ? $adressesRaw[0] : [];
+    $adressesAutoriseesPC = isset($adressesRaw[0]) ? $adressesRaw[0] : [];
 
 } catch (\Exception $e) {
     $erreur = $e->getMessage();
 }
 
-// Initialiser les variables comme tableaux vides
-$adressesAutoriseesPC = [];
-
-try {
-    // Appeler la fonction du contrat pour récupérer les adresses autorisées
-    $adressesAutoriseesPC = $client->callFunction('getAdressesAutoriseesPC'); // Ajustez le nom de la fonction si nécessaire
-} catch (\Exception $e) {
-    $erreur = $e->getMessage();
-    // Vous pouvez également enregistrer cette erreur dans un log ou l'afficher
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,14 +63,17 @@ try {
     <h1>MyTokenPC</h1>
     <?php ?>
         <p><strong>Propriétaire :</strong> <?= htmlspecialchars($owner) ?></p>
-        <p><strong>Adresse de TokenChefop :</strong> <?= htmlspecialchars($tokenCOAddress) ?></p>
+        <p><strong>Adresse de TokenCommandant :</strong> <?= htmlspecialchars($tokenCOAddress) ?></p>
         <h2>Adresses Autorisées</h2>
-        <ul>
-            <?php foreach ($adressesAutoriseesPC as $adresse): ?>
-                <li><?= htmlspecialchars($adresse) ?></li>
-            <?php endforeach; ?>
-        </ul>
-        <ul>
+        <?php if (!empty($adressesAutoriseesPC)): ?>
+            <ul>
+                <?php foreach ($adressesAutoriseesPC as $adresse): ?>
+                    <li><?= htmlspecialchars($adresse); ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <p>Aucune adresse autorisée n’a été retournée.</p>
+        <?php endif; ?>
             <li><a href="add_address.php">Ajouter une Adresse Autorisée</a></li>
             <li><a href="mint.php">Mint des Tokens</a></li>
             <li><a href="set_token_chefop.php">Définir l'Adresse de TokenChefop</a></li>
